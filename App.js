@@ -48,11 +48,6 @@ const style = StyleSheet.create({
     justifyContent : 'center',
   },
 
-  text : {
-    fontSize : 20,
-    marginTop : 30
-  },
-
  
  
 })
