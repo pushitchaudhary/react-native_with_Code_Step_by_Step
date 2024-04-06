@@ -4,12 +4,16 @@ import { View,Text, Button } from "react-native";
 import CompanyData from "./components/CompanyData";
 
 export default function App() {
-      let name = 'ram'
+   let  data = 100
+  const fruit = (val)=>{
+    data = 20
+    console.warn(data);
+  }
+
   return (
 
     <View style={{marginTop:90}}>
-      <Text>{name}</Text>
-      <Button title='Click Me'></Button>
+      <Text>{data}</Text>
       <Student1/>
       <Text></Text>
       <Student2/>
@@ -17,8 +21,11 @@ export default function App() {
       <Student3/>
       <Text></Text>
       <CompanyData/>
+      <Button title='Click Me !! Parameter' onPress={()=>fruit('this is pushit chaudhary')} color={'red'}></Button> 
+      <Button title='Click Me !! without parameter' onPress={fruit} color={'red'}></Button> 
+    
 
-    </View>
+    </View> 
   );
 }
 
