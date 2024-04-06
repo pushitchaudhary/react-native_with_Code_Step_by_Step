@@ -1,18 +1,67 @@
 import React, { useState } from "react";
 
-import { View,Text, Button  } from "react-native";
+import { View,Text, Button, TextInput, StyleSheet  } from "react-native";
 
 import styles from "./css/styles";
 
 
 export default function App() {
+  const [name, setName] = useState('')
+  const [address, setAddress] = useState('')
+  const [contact, setContact] = useState('')
+  const [email, setEmail] = useState('')
 
+
+  
   return (
   <View style={{marginTop:90}}>
-    <Text style={styles.textBox}>My Name Is Pushit</Text>
-    <Text style={styles.location}>I am from Lahan</Text>
+    <Text>Name: {name}</Text>
+    <Text>Address: {address}</Text>
+    <Text>Contact Number: {contact} </Text>
+    <Text>Email: {email}</Text>
+
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+    <Text style={styless.inputText}>Enter Name</Text>
+    <TextInput style={styless.inputBox} value={name} onChangeText={(text)=>setName(text)}  placeholder="Enter Your Name"/>
+    <Text style={styless.inputText}> Address </Text>
+    <TextInput style={styless.inputBox} value={address} onChangeText={(text)=>setAddress(text)} placeholder="Address"/>
+    <Text style={styless.inputText}>Contact Number</Text>
+    <TextInput style={styless.inputBox} value={contact} onChangeText={(text)=>setContact(text)} placeholder="Contact Number" />
+    <Text style={styless.inputText}>Email</Text>
+    <TextInput style={styless.inputBox} value={email} onChangeText={(text)=>setEmail(text)} placeholder="email"/>
+    <Button title="Submit" style={styless.submitBtn}></Button>
+    <Button title="Clear field" onPress={()=>{setName(''),setAddress(''),setEmail(''),setContact('') }}></Button>
+  
+  
   </View>  
   );
 }
+
+const styless = StyleSheet.create({
+  inputBox : {
+    fontSize : 20,
+    borderColor : 'black',
+    borderWidth : 2,
+    width : 250,
+    borderRadius : 7,
+    paddingLeft : 10,
+    marginLeft : 10,
+    height : 35,
+    marginBottom : 20
+  },
+
+  inputText : {
+    fontSize : 20,
+    marginLeft: 10,
+    marginBottom : 5
+    
+  },
+  submitBtn : {
+    color : 'red',
+    fontSize : 20
+  }
+})
 
 
