@@ -11,20 +11,12 @@ export default function App() {
   const [address, setAddress] = useState('')
   const [contact, setContact] = useState('')
   const [email, setEmail] = useState('')
+  const [display, setDisplay] = useState(false)
 
 
   
   return (
   <View style={{marginTop:90}}>
-    <Text>Name: {name}</Text>
-    <Text>Password: {password} </Text>
-    <Text>Address: {address}</Text>
-    <Text>Contact Number: {contact} </Text>
-    <Text>Email: {email}</Text>
-
-    <Text></Text>
-    <Text></Text>
-    <Text></Text>
     <Text style={styless.inputText}>Enter Name</Text>
     <TextInput style={styless.inputBox} value={name} onChangeText={(text)=>setName(text)}  placeholder="Enter Your Name"/>
     <Text style={styless.inputText}>Password</Text>
@@ -35,9 +27,23 @@ export default function App() {
     <TextInput style={styless.inputBox} value={contact} onChangeText={(text)=>setContact(text)} placeholder="Contact Number" />
     <Text style={styless.inputText}>Email</Text>
     <TextInput style={styless.inputBox} value={email} onChangeText={(text)=>setEmail(text)} placeholder="email"/>
-    <Button title="Submit" style={styless.submitBtn}></Button>
-    <Button title="Clear field" onPress={()=>{setName(''),setAddress(''),setPassword(''),setEmail(''),setContact('') }}></Button>
+    <Button title="Print Details" onPress={()=>setDisplay(true)} style={styless.submitBtn}></Button>
+    <Button title="Clear field" onPress={()=>{setDisplay(false),setName(''),setAddress(''),setPassword(''),setEmail(''),setContact('') }}></Button>
   
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+
+    {
+      display ? 
+      <View>
+        <Text>Name : {name}</Text>
+        <Text>Password : {password}</Text>
+        <Text>Address : {address}</Text>
+        <Text>Contact : {contact}</Text>
+        <Text>Email : {email}</Text>
+      </View> : null
+    }
   
   </View>  
   );
