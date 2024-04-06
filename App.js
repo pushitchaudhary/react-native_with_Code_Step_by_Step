@@ -10,7 +10,6 @@ export default function App() {
     setName(value)
   }
 
-
   return (
 
     <View style={{marginTop:90}}>
@@ -18,7 +17,21 @@ export default function App() {
 
     <Button title="click me" onPress={()=>carName('k xha')}></Button>
   
+
+  <UserData name="pushit" age="23"/>
     </View> 
+    
   );
 }
 
+
+
+const UserData = (props)=>{
+
+  return (
+    <View>
+      <Text>Name :{props.name} </Text>
+      <Text>Age : {props.age}</Text>
+    </View>
+  )
+}
