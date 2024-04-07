@@ -1,204 +1,149 @@
 import React, { useState } from "react";
 
-import { View,Text, Button, TextInput, StyleSheet , FlatList, ScrollView } from "react-native";
-
-import styles from "./css/styles";
+import { View,Text, Button, TextInput, StyleSheet, ScrollView  } from "react-native";
 
 
 export default function App() {
 
-  const UserData = [
+  const User = [
     {
       id : 1,
-      name : "pushit",
-      age : 23
-    },
-    {
+      name : 'ram',
+      age : 25
+    },{
       id : 2,
-      name : "ram",
-      age : 19
-    },
-    {
+      name : 'rams',
+      age : 25
+    },{
       id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
+      name : 'har9',
+      age : 25
+    },{
+      id : 4,
+      name : 'radfm',
+      age : 25
+    },{
+      id : 5,
+      name : 'sdf',
+      age : 25
+    },{
+      id : 6,
+      name : 'erte',
+      age : 25
+    },{
+      id : 7,
+      name : 'bfgd',
+      age : 25
+    },{
+      id : 8,
+      name : 't4t4t',
+      age : 25
+    },{
+      id : 9,
+      name : 'hhfsf',
+      age : 25
     }, {
+      id : 1,
+      name : 'ram',
+      age : 25
+    },{
+      id : 2,
+      name : 'rams',
+      age : 25
+    },{
       id : 3,
-      name : "om",
-      age : 11
-    },
-    {
+      name : 'har9',
+      age : 25
+    },{
+      id : 4,
+      name : 'radfm',
+      age : 25
+    },{
+      id : 5,
+      name : 'sdf',
+      age : 25
+    },{
+      id : 6,
+      name : 'erte',
+      age : 25
+    },{
+      id : 7,
+      name : 'bfgd',
+      age : 25
+    },{
+      id : 8,
+      name : 't4t4t',
+      age : 25
+    },{
+      id : 9,
+      name : 'hhfsf',
+      age : 25
+    }, {
+      id : 1,
+      name : 'ram',
+      age : 25
+    },{
+      id : 2,
+      name : 'rams',
+      age : 25
+    },{
       id : 3,
-      name : "om",
-      age : 11
+      name : 'har9',
+      age : 25
+    },{
+      id : 4,
+      name : 'radfm',
+      age : 25
+    },{
+      id : 5,
+      name : 'sdf',
+      age : 25
+    },{
+      id : 6,
+      name : 'erte',
+      age : 25
+    },{
+      id : 7,
+      name : 'bfgd',
+      age : 25
+    },{
+      id : 8,
+      name : 't4t4t',
+      age : 25
+    },{
+      id : 9,
+      name : 'hhfsf',
+      age : 25
     },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "om",
-      age : 11
-    },
-    {
-      id : 3,
-      name : "Hari",
-      age : 11
-    },
-
   ]
 
-  // const [name, setName] = useState('')
-  // const [password, setPassword] = useState('')
-  // const [address, setAddress] = useState('')
-  // const [contact, setContact] = useState('')
-  // const [email, setEmail] = useState('')
-  // const [display, setDisplay] = useState(false)
-
-
-  return (
-  <View style={{marginTop:90}}>
-    
-    {/* <Text style={styless.inputText}>Enter Name</Text>
-    <TextInput style={styless.inputBox} value={name} onChangeText={(text)=>setName(text)}  placeholder="Enter Your Name"/>
-    
-    <Text style={styless.inputText}>Password</Text>
-    <TextInput style={styless.inputBox} value={password} secureTextEntry={true} onChangeText={(text)=>setPassword(text)}  placeholder="Password" />
-   
-
-    <Text style={styless.inputText}> Address </Text>
-    <TextInput style={styless.inputBox} value={address} onChangeText={(text)=>setAddress(text)} placeholder="Address"/>
-    
-    <Text style={styless.inputText}>Contact Number</Text>
-    <TextInput style={styless.inputBox} value={contact} onChangeText={(text)=>setContact(text)} placeholder="Contact Number" />
-    
-    <Text style={styless.inputText}>Email</Text>
-    <TextInput style={styless.inputBox} value={email} onChangeText={(text)=>setEmail(text)} placeholder="email"/>
-   
-    <Button title="Print Details" onPress={()=>setDisplay(true)} style={styless.submitBtn}></Button>
-    <Button title="Clear field" onPress={()=>{setDisplay(false),setName(''),setAddress(''),setPassword(''),setEmail(''),setContact('') }}></Button>
-  
-    <Text></Text>
-    <Text></Text>
-
-    {
-      display ? 
-      <View>
-        <Text>Name : {name}</Text>
-        <Text>Password : {password}</Text>
-        <Text>Address : {address}</Text>
-        <Text>Contact : {contact}</Text>
-        <Text>Email : {email}</Text>
-      </View> : null
-    } */}
-
-   {/* <FlatList
-    data = {UserData}
-    renderItem ={({item})=> <Text style={styless.textStyle}>{item.id} {item.name} {item.age}</Text>}
-    keyExtractor={item=>item.id}
-    /> */}
-
-<ScrollView>
-
-
-    {
-      UserData.map((item)=><Text style={styless.textStyle}>{item.name}</Text>)
-    }
-  
+  return(
+  <View style={{marginTop: 80}}>
+    <ScrollView>
+    <View style={{flex:1, flexWrap :'wrap', flexDirection:'row'}}>
+      {
+        User.map((item)=><Text style={styless.text}>{item.name}</Text>)
+      }
+    </View>
     </ScrollView>
+
   </View>  
   );
 }
 
+
+
 const styless = StyleSheet.create({
-  inputBox : {
-    fontSize : 20,
-    borderColor : 'black',
-    borderWidth : 2,
-    width : 250,
-    borderRadius : 7,
-    paddingLeft : 10,
-    marginLeft : 10,
-    height : 35,
-    marginBottom : 20
-  },
-
-  inputText : {
-    fontSize : 40,
-    marginLeft: 10,
-    marginBottom : 5
-    
-  },
-  submitBtn : {
+  text : {
     color : 'red',
-    fontSize : 20
+    fontSize : 30,
+    color : 'white',
+    backgroundColor : 'blue',
+    padding : 25,
+    width : 200,
+    margin : 5
   }
-  ,
-
-  textStyle : {
-    fontSize : 20,
-    color : 'red',
-    backgroundColor : 'yellow',
-    margin : 10,
-    height : 40
-  }
+ 
 })
 
 
