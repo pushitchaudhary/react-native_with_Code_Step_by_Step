@@ -1,13 +1,4 @@
-import React, { useState } from "react";
-
-import { View,Text, Button, TextInput, StyleSheet, ScrollView, FlatList  } from "react-native";
-
-
-export default function App() {
-
-  const [name , setName] = useState('')
-
-  const User = [
+const User = [
     {
       id : 1,
       name : 'ram',
@@ -118,58 +109,3 @@ export default function App() {
       age : 25
     },
   ]
-
-  return(
-  <View style={{marginTop: 70}}>
-   
-
-    <FlatList
-
-      data = {User}
-
-      renderItem = {({item})=> <UserReturnData item={item} />}
-
-    />
-  </View>
-  );
-}
-
-
-const UserReturnData = (props)=>{
-  const item = props.item
-  return(
-    <View>
-      <Text>id : {item.id}</Text>
-      <Text>Name : {item.name}</Text>
-      <Text>age : {item.age}</Text>
-      <Text></Text>
-    </View>
-  )
-}
-
-
-const styless = StyleSheet.create({
-  text : {
-    color : 'red',
-    fontSize : 30,
-    color : 'white',
-    backgroundColor : 'blue',
-    padding : 25,
-    width : 120,
-    margin : 5,
-    textAlignVertical : 'center',
-    textAlign : 'center'
-  },
-  inputText :{
-    color : 'red',
-    fontSize : 20,
-    width : 200,
-    borderColor : 'black',
-    borderWidth : 2,
-    borderRadius : 4,
-    marginTop : 5
-  }
- 
-})
-
-
