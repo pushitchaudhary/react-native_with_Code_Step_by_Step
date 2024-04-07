@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { View,Text, Button, TextInput, StyleSheet , FlatList } from "react-native";
+import { View,Text, Button, TextInput, StyleSheet , FlatList, ScrollView } from "react-native";
 
 import styles from "./css/styles";
 
@@ -22,7 +22,87 @@ export default function App() {
       id : 3,
       name : "om",
       age : 11
-    }
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    }, {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "om",
+      age : 11
+    },
+    {
+      id : 3,
+      name : "Hari",
+      age : 11
+    },
+
   ]
 
   // const [name, setName] = useState('')
@@ -69,14 +149,20 @@ export default function App() {
       </View> : null
     } */}
 
-    <Text style={styless.textStyle}>Id Name Age</Text>
-   <FlatList
+   {/* <FlatList
     data = {UserData}
     renderItem ={({item})=> <Text style={styless.textStyle}>{item.id} {item.name} {item.age}</Text>}
     keyExtractor={item=>item.id}
+    /> */}
 
-    />
+<ScrollView>
+
+
+    {
+      UserData.map((item)=><Text style={styless.textStyle}>{item.name}</Text>)
+    }
   
+    </ScrollView>
   </View>  
   );
 }
