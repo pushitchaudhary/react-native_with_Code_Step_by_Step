@@ -11,7 +11,7 @@ class Student extends Component{
     render(){
         return(
             <View>
-                <Text>This is student class componnet</Text>
+                <Text>Student : {this.props.name}</Text>
                 <Button title="Press Me" onPress={this.car}/>
             </View>
         )
