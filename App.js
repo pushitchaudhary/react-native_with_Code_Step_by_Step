@@ -1,31 +1,28 @@
-import React, { useState , Component} from "react";
+import React, { useState , Component, useEffect} from "react";
 
 import { View,Text, Button, TextInput, StyleSheet, ScrollView, FlatList  } from "react-native";
 import Student from "./components/Student";
 
-class App extends Component {
+const App = ()=>{
 
-  constructor(){
-    super()
-    this.state={
-      name : "pushit ",
-      age : 23
-    }
-  }
+  const [num, setNum] = useState(0)
+  const [count, setCount] = useState(100)
 
-  changeText(value){
-    this.setState({name:value})
-  }
+  useEffect(()=>{
+    console.warn("Hook Called")
+  },[num])
 
-  render(){
-    return(
-      <View style={{marginTop:80}}>
-        <Text>State Name: {this.state.name}</Text>
-        <TextInput onChangeText={(text)=>this.changeText(text)}  placeholder="Enter Your Name" style={{borderWidth:3, padding:5, height:40,fontSize:20}}></TextInput>
-        <Student name={this.state.name}/>
-      </View>
-    )
-  }
+  return(
+    <View style={{marginTop:90}}>
+      <Text>Number: {num}</Text>
+      <Text>Count: {count}</Text>
+      <Button title="click me" onPress={()=>setNum(num+1)}></Button>
+      <Button title="count +100" onPress={()=>setCount(count+1)}></Button>
+      <Student count={count}/>
+    </View>
+  )
 }
 
 export default App
+
+

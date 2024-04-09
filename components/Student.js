@@ -11,8 +11,7 @@ class Student extends Component{
     render(){
         return(
             <View>
-                <Text>Student : {this.props.name}</Text>
-                <Button title="Press Me" onPress={this.car}/>
+                <Text>Student count : {this.props.count}</Text>
             </View>
         )
     }
