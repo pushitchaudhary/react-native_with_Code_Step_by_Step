@@ -1,55 +1,45 @@
 import React, { useState , Component, useEffect} from "react";
 
-import { View,Text, Button, TextInput, StyleSheet, ScrollView, FlatList  } from "react-native";
+import { View,Text, StyleSheet, TouchableHighlight } from "react-native";
 
 
 const App = ()=>{
   return(
-    <View style={style.main}>
-      <View style={style.box1}>
-        <View style={style.col1}></View>
-        <View style={style.col2}></View>
-        <View style={style.col3}></View>
-      </View>
-      <View style={style.box2}></View>
-      <View style={style.box3}></View>
+    <View style={{marginTop: 80}}>
+      <TouchableHighlight>
+        <Text style={style.btn}>Button</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight>
+        <Text style={[style.btn, style.success]}>Success</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight>
+        <Text style={[style.btn, style.primary]}>Primary</Text>
+      </TouchableHighlight>
     </View>
   )
 
 }
 
-const style = StyleSheet.create({
-  main : {
-    backgroundColor : 'red',
-    flex : 1
-  },
-  box1 : {
-    flex : 1,
-    backgroundColor : 'yellow',
-    flexDirection : 'row'
-  },
-  box2 : {
-    backgroundColor : 'green',
-    flex : 1,
-  },
-  box3 : {
-    backgroundColor : 'brown',
-    flex : 1
-  },
 
-  col1 : {
+const style = StyleSheet.create({
+  btn : {
     backgroundColor : 'red',
-    flex : 1
+    padding : 12,
+    fontSize : 20,
+    color : 'white',
+    textAlign : 'center',
+    margin : 20
   },
-  col2 : {
-    backgroundColor : 'blue',
-    flex : 1
+  success : {
+    backgroundColor : 'green'
   },
-  col3 : {
-    backgroundColor : 'white',
-    flex : 1
+  primary : {
+    backgroundColor : 'gray'
   }
 })
+
 
 
 export default App
