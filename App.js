@@ -1,42 +1,71 @@
 import React, { useState , Component, useEffect} from "react";
 
-import { View,Text, StyleSheet, TouchableHighlight } from "react-native";
+import { View,Text, StyleSheet, TouchableHighlight , ScrollView, TouchableOpacity} from "react-native";
 
 
 const App = ()=>{
+
+  const [checked, setChecked] = useState(1)
+
+
   return(
-    <View style={{marginTop: 80}}>
-      <TouchableHighlight>
-        <Text style={style.btn}>Button</Text>
-      </TouchableHighlight>
+    <View style={style.mainBox}>
+        <TouchableOpacity onPress={()=>setChecked(1)}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={style.radio}>
+              {
+                checked == 1 ?  <View style={style.radionBg}></View> : null
+              }
+            </View>
+            <Text style={style.btntext}>Option 1</Text>
+          </View>
+        </TouchableOpacity>
 
-      <TouchableHighlight>
-        <Text style={[style.btn, style.success]}>Success</Text>
-      </TouchableHighlight>
+        <Text></Text>
+        <Text></Text>
+        <Text></Text>
+        <TouchableOpacity onPress={()=>setChecked(2)}>
+          <View style={{flexDirection: 'row'}}>
+            <View style={style.radio}>
+              {
+                checked == 2 ?  <View style={style.radionBg}></View> : null
+              }
+             
+            </View>
+            <Text style={style.btntext}>Option 2</Text>
+          </View>
+        </TouchableOpacity>
 
-      <TouchableHighlight>
-        <Text style={[style.btn, style.primary]}>Primary</Text>
-      </TouchableHighlight>
+       
     </View>
   )
 
 }
 
-
 const style = StyleSheet.create({
-  btn : {
-    backgroundColor : 'red',
-    padding : 12,
-    fontSize : 20,
-    color : 'white',
+  mainBox : {
+    flex : 1,
+    marginTop : 80,
     textAlign : 'center',
-    margin : 20
+    alignItems : 'center',
+    justifyContent : 'center'
   },
-  success : {
-    backgroundColor : 'green'
+  btntext : {
+    fontSize : 25,
+    margin : 5
   },
-  primary : {
-    backgroundColor : 'gray'
+  radio : {
+    height : 40,
+    width : 40,
+    borderWidth : 2,
+    borderRadius : 20
+  },
+  radionBg : {
+    height : 26,
+    backgroundColor : 'black',
+    width : 26,
+    borderRadius : 12,
+    margin : 5
   }
 })
 
