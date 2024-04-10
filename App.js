@@ -5,38 +5,48 @@ import { View,Text, StyleSheet, TouchableHighlight , ScrollView, TouchableOpacit
 
 const App = ()=>{
 
+  const Skill = [
+    {
+      id : 1,
+      name : "Node js"
+    },
+    {
+      id : 2,
+      name : "PHP"
+    },
+    {
+      id : 3,
+      name : "JAVA"
+    },
+    {
+      id : 4,
+      name : "Python"
+    }
+  ]
+
+
+
+
   const [checked, setChecked] = useState(1)
 
 
   return(
     <View style={style.mainBox}>
-        <TouchableOpacity onPress={()=>setChecked(1)}>
-          <View style={{flexDirection: 'row'}}>
-            <View style={style.radio}>
-              {
-                checked == 1 ?  <View style={style.radionBg}></View> : null
-              }
-            </View>
-            <Text style={style.btntext}>Option 1</Text>
-          </View>
-        </TouchableOpacity>
 
-        <Text></Text>
-        <Text></Text>
-        <Text></Text>
-        <TouchableOpacity onPress={()=>setChecked(2)}>
-          <View style={{flexDirection: 'row'}}>
-            <View style={style.radio}>
-              {
-                checked == 2 ?  <View style={style.radionBg}></View> : null
-              }
-             
-            </View>
-            <Text style={style.btntext}>Option 2</Text>
+      {
+        Skill.map((item)=> <TouchableOpacity key={item.id} onPress={()=>setChecked(item.id)}>
+        <View style={{flexDirection: 'row'}}>
+          <View style={style.radio}>
+            {
+              checked == item.id ?  <View style={style.radionBg}></View> : null
+            }
           </View>
-        </TouchableOpacity>
+          <Text style={style.btntext}>{item.name}</Text>
+        </View>
+        <Text></Text>
+      </TouchableOpacity>)
+      }
 
-       
     </View>
   )
 
