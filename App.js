@@ -2,21 +2,43 @@ import React, { useState , Component, useEffect} from "react";
 
 import { View,Text, StyleSheet, StatusBar, Platform, } from "react-native";
 
-import {WebView} from 'react-native-webview'
+import {NavigationContainer} from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 
+const Stack = createNativeStackNavigator();
 const App = ()=>{
-
-  const [show, setShow] = useState(false)
 
   return(
 
 
-      <WebView style={{marginTop: 60}} source={{uri:"https://www.youtube.com/watch?v=4vVf18LXlOo&list=PL8p2I9GklV468O2wk-n8Q1KmtMhnHHj4C&index=37"}} />
- 
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Navigator name="Login" component={Login}/>
+        <Stack.Screen name="Home" component={Home}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+    
   )
-
 }
+
+const Home = ()=>{
+  return(
+    <View>
+      <Text>This is home page gjhgjgjgjg gjhgjhgj</Text>
+    </View>
+  )
+}
+
+const Login = ()=>{
+  return(
+    <View>
+      <Text>This is home page gjhgjgjgjg gjhgjhgj</Text>
+    </View>
+  )
+}
+
+
 
 const style = StyleSheet.create({
   mainBox : {
