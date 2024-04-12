@@ -1,6 +1,6 @@
 import React, { useState , Component, useEffect} from "react";
 
-import { View,Text, StyleSheet, Button , Modal } from "react-native";
+import { View,Text, StyleSheet, StatusBar, Platform} from "react-native";
 
 
 const App = ()=>{
@@ -10,20 +10,8 @@ const App = ()=>{
   return(
     <View style={style.mainBox}>
 
+     <Text>{Platform.OS}</Text>
 
-      <Modal transparent={true} visible={show} animationType = 'slide'>
-        <View style={style.modalView}>
-          <View style={style.modalViewText}>
-            <Text>This is pushit chaudhary</Text>
-            <Button title="close Modal" onPress={()=>setShow(false)}></Button>
-          </View>
-        </View>
-      </Modal>
-
-
-    <View style={style.showModal}>
-      <Button title="Show Modal" onPress={()=>setShow(true)}></Button>
-    </View>
     </View>
   )
 
