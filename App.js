@@ -11,7 +11,6 @@ const App = ()=>{
 
   return(
 
-
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Navigator name="Login" component={Login}/>
@@ -33,7 +32,7 @@ const Home = ()=>{
 const Login = ()=>{
   return(
     <View>
-      <Text>This is home page gjhgjgjgjg gjhgjhgj</Text>
+      <Text>This is home page </Text>
     </View>
   )
 }
@@ -54,23 +53,7 @@ const style = StyleSheet.create({
     marginTop : 30
   },
 
-  showModal : {
-    flex : 1,
-    justifyContent : 'flex-end',
-    marginBottom : 20,
-  },
-  modalView :{
-    justifyContent : 'center',
-    alignItems : 'center',
-    textAlign : 'center',
-    flex : 1,
-  }, 
-  modalViewText : {
-    backgroundColor : 'yellow',
-    padding : 60,
-    justifyContent : 'center',
-    textAlign : 'center'
-  }
+ 
  
 })
 
